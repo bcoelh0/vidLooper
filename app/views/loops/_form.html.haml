@@ -1,0 +1,13 @@
+= form_for @loop do |f|
+  - if @loop.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@loop.errors.count, "error")} prohibited this loop from being saved:"
+      %ul
+        - @loop.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :url
+    = f.text_field :url
+  .actions
+    = f.submit 'Save'

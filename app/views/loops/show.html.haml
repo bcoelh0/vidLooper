@@ -1,0 +1,10 @@
+%p#notice= notice
+
+%p
+  %b Url:
+  %p= @loop.url
+  %p= @loop.embedded
+
+= link_to 'Edit', edit_loop_path(@loop)
+\|
+= link_to 'Back', loops_path

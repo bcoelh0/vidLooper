@@ -1,0 +1,20 @@
+%h1 Listing loops
+
+%table
+  %tr
+    %th Url
+    %th
+    %th
+    %th
+
+  - @loops.each do |loop|
+    %tr
+      %td= loop.url
+      %td= link_to 'Show', loop
+      %td= link_to 'Edit', edit_loop_path(loop)
+      %td= link_to 'Destroy', loop, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+
+= link_to 'New Loop', new_loop_path
